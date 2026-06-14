@@ -15,8 +15,7 @@ int main() {
             cin >> a[i];
         }
 
-        int ans = a[0];  // distance from 0 to first station
-
+        int ans = a[0]; 
         for (int i = 1; i < n; i++) {
             ans = max(ans, a[i] - a[i - 1]);
         }
