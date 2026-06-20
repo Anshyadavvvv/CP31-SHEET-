@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
@@ -8,24 +8,22 @@ int main()
 
     while (t--)
     {
-        int n, k;
-        cin >> n >> k;
+        int n,k;
+        cin>>n>>k;
+        vector <int> A(n);
 
-        bool found = false;
-
-        for (int i = 0; i < n; i++)
-        {
-            int x;
-            cin >> x;
-
-            if (x == k)
-                found = true;
+        bool commonelement = false;
+        for(int i = 0 ;  i < n ; i++){
+            cin>>A(i);
+             if(A(i) == k){
+               commonelement = true;
+             }
         }
+        if(commonelement){
+            cout<<"YES";
+        }else{cout<<"NO";}
 
-        if (found)
-            cout << "YES\n";
-        else
-            cout << "NO\n";
+
     }
 
     return 0;
