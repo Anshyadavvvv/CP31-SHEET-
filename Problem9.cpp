@@ -1,4 +1,5 @@
-#include <iostream>
+#include <bits/stdc++.h>
+
 using namespace std;
 
 int main()
@@ -10,17 +11,18 @@ int main()
     {
         int n;
         cin >> n;
-
+        vector<int> A(n);
         int sum = 0;
-
-        for (int i = 0; i < n - 1; i++)
+            for (int i = 0; i < n - 1; i++)
         {
-            int x;
-            cin >> x;
-            sum += x;
+            cin >> A[i];
+            sum += A[i]; 
         }
+        int missingeff = -sum;
+        cout<<missingeff<<endl;
+        
 
-        cout << -sum << "\n";
+        
     }
 
     return 0;
