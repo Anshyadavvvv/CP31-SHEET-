@@ -1,34 +1,32 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
-    int t;
+    int t; 
     cin >> t;
-
     while (t--)
     {
-        int n;
+        int n; 
         cin >> n;
+        vector<int> A(n); 
+        for (int i = 0; i < n; i++) 
+            cin >> A[i];
+        
 
-        int odd = 0, even = 0;
-
-        for (int i = 0; i < n; i++)
+       int oddcount = 0; 
+        for (int i = 0; i < n; i++) 
         {
-            int x;
-            cin >> x;
-
-            if (x % 2 == 0)
-                even++;
-            else
-                odd++;
+            if (A[i] % 2 == 1) 
+                oddcount++; 
         }
-
-        if (odd % 2 == 0)
-            cout << "YES\n";
+        
+        
+        if ( oddcount % 2 == 1)
+            cout << "NO" << endl; 
         else
-            cout << "NO\n";
+            cout << "YES" << endl; 
     }
-
     return 0;
 }
+
