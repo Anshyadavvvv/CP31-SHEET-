@@ -13,20 +13,18 @@ int main() {
 
         string x, s;
         cin >> x >> s;
-
         int ans = -1;
-
-        for (int i = 0; i <= 6; i++) {
-
-            if (x.find(s) != string::npos) {
-                ans = i;
-                break;
-            }
-
-            x += x;   // perform one operation
+        int operation = 0;
+        while (operation <= 6) {
+        if (x.find(s) != string::npos) {
+            ans = operation;
+            break;
         }
+        x += x; 
+        operation++;
+    }
 
-        cout << ans << '\n';
+        cout << ans <<endl;
     }
 
     return 0;
