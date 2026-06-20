@@ -1,8 +1,10 @@
-<<<<<<< HEAD
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
+    
+    
+
     int t;
     cin >> t;
 
@@ -10,85 +12,36 @@ int main() {
         int n;
         cin >> n;
 
-        int a[1005];
-        int total2 = 0;
+        vector<int> a(n);
+        int total_twos = 0;
 
         for (int i = 0; i < n; i++) {
             cin >> a[i];
-            if (a[i] == 2)
-                total2++;
-        }
-
-        if (total2 == 0) {
-            cout << 1 << "\n";
-            continue;
-        }
-
-        if (total2 % 2 != 0) {
-            cout << -1 << "\n";
-            continue;
-        }
-
-        int need = total2 / 2;
-        int cnt = 0;
-
-        for (int i = 0; i < n; i++) {
-            if (a[i] == 2)
-                cnt++;
-
-            if (cnt == need) {
-                cout << i + 1 << "\n";
-                break;
+            if (a[i] == 2) {
+                total_twos++;
             }
         }
+
+        int ans = -1;
+        int left_twos = 0;
+
+        
+        for (int i = 0; i < n - 1; i++) {
+            if (a[i] == 2) {
+                left_twos++;
+            }
+
+            int right_twos = total_twos - left_twos;
+
+            
+            if (left_twos == right_twos) {
+                ans = i + 1; 
+                break;       
+            }
+        }
+
+        cout << ans << "\n";
     }
 
     return 0;
-=======
-#include <iostream>
-using namespace std;
-
-int main() {
-    int t;
-    cin >> t;
-
-    while (t--) {
-        int n;
-        cin >> n;
-
-        int a[1005];
-        int total2 = 0;
-
-        for (int i = 0; i < n; i++) {
-            cin >> a[i];
-            if (a[i] == 2)
-                total2++;
-        }
-
-        if (total2 == 0) {
-            cout << 1 << "\n";
-            continue;
-        }
-
-        if (total2 % 2 != 0) {
-            cout << -1 << "\n";
-            continue;
-        }
-
-        int need = total2 / 2;
-        int cnt = 0;
-
-        for (int i = 0; i < n; i++) {
-            if (a[i] == 2)
-                cnt++;
-
-            if (cnt == need) {
-                cout << i + 1 << "\n";
-                break;
-            }
-        }
-    }
-
-    return 0;
->>>>>>> f137f7601dab08ce9be3599d1cfa67b74b6a65a9
 }
