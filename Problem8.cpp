@@ -14,8 +14,8 @@ int main()
 
         bool commonelement = false;
         for(int i = 0 ;  i < n ; i++){
-            cin>>A(i);
-             if(A(i) == k){
+            cin>>A[i];
+             if(A[i] == k){
                commonelement = true;
              }
         }
